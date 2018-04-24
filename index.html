@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Exile Panel - Administração servidores Exile Mod">
     <meta name="author" content="Lucas Saliés Brum">
     <link rel="icon" href="img/favicon.ico">
@@ -52,6 +51,7 @@
               <a href="#" id="reiniciar" class="btn btn-lg btn-default">Reiniciar</a>&nbsp;
               <a href="#" id="atualizar" class="btn btn-lg btn-default">Atualizar</a>&nbsp;
               <a href="#" id="status" class="btn btn-lg btn-default">Status</a>
+              <a href="#" id="teste" class="btn btn-lg btn-default">Teste</a>
             </p>
           </div>
 
@@ -75,10 +75,8 @@
     <script src="bs/js/bootstrap.min.js"></script>
     <script src="bs/js/ie10-viewport-bug-workaround.js"></script>
     <script>
-      // Detetcta a plataforma.
       // Valores possíveis: HP-UX, Linux i686, Linux armv7l, Mac68K, MacPPC, MacIntel, SunOS, Win16, Win32, WinCE
-      //var os = navigator.platform;
-      //var so = navigator.platform.substring(0, 3);
+      var so = navigator.platform.substring(0, 3);
 
       $("#iniciar").click(function(){
         $('#retorno').load('php/control.php?acao=iniciar');
@@ -98,6 +96,10 @@
 
       $("#status").click(function(){
         $('#retorno').load('php/control.php?acao=detalhes');
+      });
+
+      $("#teste").click(function(){
+        $('#retorno').load('php/control.php?acao=teste');
       });
 
       $('#retorno').load('php/control.php');
